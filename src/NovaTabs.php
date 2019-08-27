@@ -3,6 +3,8 @@
 namespace R64\NovaTab;
 
 use Laravel\Nova\Fields\Field;
+use Laravel\Nova\Panel;
+use Laravel\Nova\Http\Requests\NovaRequest;
 
 class NovaTabs extends Field
 {

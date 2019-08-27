@@ -5,6 +5,8 @@ namespace R64\NovaTab;
 use Laravel\Nova\Fields\Field;
 use Laravel\Nova\ResourceTool;
 use Illuminate\Http\Resources\MergeValue;
+use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Panel;
 
 class NovaTab extends MergeValue implements \JsonSerializable
 {
