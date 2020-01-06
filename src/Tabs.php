@@ -63,7 +63,7 @@ trait Tabs
                 $fields = $fields->all();
             }
             $this->assignFieldsToTabs($request, $fields);
-            return collect([
+            return FieldCollection::make([
                 (NovaTabs::make('tabs'))
                     ->withMeta(['fields' => array_values($fields)])
             ]);
