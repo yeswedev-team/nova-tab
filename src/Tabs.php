@@ -91,12 +91,13 @@ trait Tabs
     * @param  \Illuminate\Support\Collection   $panels
     * @return \Illuminate\Support\Collection
     */
-    protected function assignToPanels($label, Collection $panels)
+    protected function assignToPanels($label, FieldCollection $fields)
     {
-        return $panels->map(function ($field) use ($label) {
-            if ( !is_array($field) && !$field->panel ) {
-                 $field->panel = $label;
+        return $fields->map(function ($field) use ($label) {
+            if (! $field->panel) {
+                $field->panel = $label;
             }
+
             return $field;
         });
     }
