@@ -89,15 +89,16 @@ trait Tabs
     * Assign the fields with the given panels to their parent panel.
     *
     * @param  string                           $label
-    * @param  \Laravel\Nova\Fields\FieldCollection   $panels
+    * @param  \Laravel\Nova\Fields\FieldCollection   $fields
     * @return \Laravel\Nova\Fields\FieldCollection
     */
-    protected function assignToPanels($label, FieldCollection $panels)
+    protected function assignToPanels($label, FieldCollection $fields)
     {
-        return $panels->map(function ($field) use ($label) {
-            if ( !is_array($field) && !$field->panel ) {
-                 $field->panel = $label;
+        return $fields->map(function ($field) use ($label) {
+            if (! $field->panel) {
+                $field->panel = $label;
             }
+
             return $field;
         });
     }
